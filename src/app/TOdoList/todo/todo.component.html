@@ -1,0 +1,143 @@
+
+<div class="card disk shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="card-header head">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          TODOList
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item "  data-bs-toggle="modal" data-bs-target="#exampleModal">1. Note</a></li>
+          <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >2. Note+Date</a></li>
+          <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#oneexampleModal">3. Note+Date+Attachment</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-body add">
+       <h3>WELCOME to TODO LIST</h3>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container text-center">
+    <div class="row row-cols-4">
+  <div class="card list" *ngFor="let item of userdeta">
+    <div class="card-body cardone">
+        <button type="button" class="btn btn-dark" (click)="edit(item)"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#twoexampleModal"></i></button> &nbsp;
+        <button type="button" class="btn btn-warning" (click)="deleteuserdeta(item)"><i class="bi bi-trash3"></i></button>
+        <h5>Note</h5>{{item.note}} <br>
+       <h5>Date</h5> {{item.Date}}
+    </div>
+  </div>
+</div>
+</div>
+
+
+  
+<!-- modal 1 ---------------------------------->
+
+  <div class="modal fade mode" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header head">
+          <h5 class="modal-title" id="exampleModalLabel">ToDo List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <form [formGroup]="form">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Note</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="note">
+  </div>
+  <button type="submit" class="btn btn-primary PRO" (click)="add()" data-bs-dismiss="modal">ADD List</button>
+</form> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+
+<!-- Modal 2 ---------------------------->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header head">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">ToDo List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Note</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="note">
+             <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+          </div>
+          <button type="submit" class="btn btn-primary PRO" (click)="add()" data-bs-dismiss="modal">ADD List</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-------   modal 3 -------------------------->
+
+<div class="modal fade" id="oneexampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="oneexampleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header head">
+        <h1 class="modal-title fs-5" id="oneexampleModal">ToDo List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Note</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="note">
+             <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+            <label for="exampleInputEmail1" class="form-label">Attachment</label>
+            <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+          </div>
+          <button type="submit" class="btn btn-primary PRO" (click)="add()" data-bs-dismiss="modal">ADD List</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- edit deta -->
+
+<div class="modal fade" id="twoexampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="twoexampleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:violet">
+        <h1 class="modal-title fs-5" id="twoexampleModal">ToDo List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Note</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="note">
+             <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+            <label for="exampleInputEmail1" class="form-label">Attachment</label>
+            <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+          </div>
+          <button type="submit" class="btn btn-success PRO" (click)="update()" data-bs-dismiss="modal">Update</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+

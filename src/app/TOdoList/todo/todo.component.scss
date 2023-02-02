@@ -1,0 +1,36 @@
+.disk{
+    width: 300px;
+    height: 180px;
+    margin-left: 640px;
+    box-shadow: 35px solid red;
+    color: navy;
+    font-family: 'Times New Roman', Times, serif;
+    .head{
+        background-color: lawngreen;
+        font-family: 'Times New Roman', Times, serif;
+        text-align:center;
+        font-weight: bolder;
+    }
+}
+.PRO{
+    margin-left:80px;
+    
+}
+.list{
+    width:300px;
+    margin: 10px;
+    background-color: lightslategrey;
+}
+
+.mode{
+width: 300px;
+margin-left: 640px;
+}
+
+.head{
+    background-color: yellow;
+    color:navy;
+}
+.add{
+    text-align: center;
+}
