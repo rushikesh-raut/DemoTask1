@@ -26,7 +26,7 @@ export class TodoComponent implements OnInit {
   // })
   //not work this functinality for multiple color
   }
-
+// create deta .....................in json server 
   add(){
     let obj = {note : this.form.value.note , Date:this.form.value.date , id:''}
   
@@ -36,13 +36,19 @@ export class TodoComponent implements OnInit {
     this.form.reset()
   })
   }
+
+
+   // call the json deta ....................
   userdeta:any
   fetachdeta(){
     this.service.acceptdeta().subscribe(req=>{
   this.userdeta=req
     })
   }
+
+
   
+  // Edit Functionallity.....................
   enduser:any
   edit(item:any){
     this.form.patchValue({
@@ -51,7 +57,10 @@ export class TodoComponent implements OnInit {
     })
     this.enduser=item
   }
+
+
   
+  // update functionallity...........................
   update()
   {
     let obj = {note : this.form.value.note , Date:this.form.value.date , id:this.enduser.id}
@@ -63,7 +72,10 @@ export class TodoComponent implements OnInit {
     })
   }
   
-  
+
+
+
+  // delete functionallity...................
   deleteuserdeta(item:any)
   {
   this.service.deletedeta(item.id).subscribe(el=>{
