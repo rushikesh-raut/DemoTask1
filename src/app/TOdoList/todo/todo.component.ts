@@ -13,7 +13,8 @@ export class TodoComponent implements OnInit {
   constructor(private service:HttpserService,private fb:FormBuilder) { }
   form = this.fb.group({
     note :[''],
-    date:['']
+    date:[''],
+    file:['']
   })
   ngOnInit(): void {this.fetachdeta()
   
@@ -28,7 +29,7 @@ export class TodoComponent implements OnInit {
   }
 // create deta .....................in json server 
   add(){
-    let obj = {note : this.form.value.note , Date:this.form.value.date , id:''}
+    let obj = {note : this.form.value.note , Date:this.form.value.date , file:this.form.value.file, id:''}
   
   this.service.postdeta(obj).subscribe(el=>{
     console.log(el)
@@ -53,7 +54,8 @@ export class TodoComponent implements OnInit {
   edit(item:any){
     this.form.patchValue({
      note : item.note,
-     date :item.date
+     date :item.date,
+     file:item.file
     })
     this.enduser=item
   }
@@ -63,7 +65,7 @@ export class TodoComponent implements OnInit {
   // update functionallity...........................
   update()
   {
-    let obj = {note : this.form.value.note , Date:this.form.value.date , id:this.enduser.id}
+    let obj = {note : this.form.value.note , Date:this.form.value.date , file:this.form.value.file, id:this.enduser.id}
     
     this.service.updatedeta(this.enduser.id,obj).subscribe(el=>{
       console.log(el)
