@@ -1,0 +1,92 @@
+<!--Page Wrapper Start-->
+<div id="wrapper">
+    <div class="logbox">
+        <div class="dvht">
+            <div class="logslider">
+                <div class="swiper-container logscslider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text">Got a gift card ?<p class="slider-sub">The perfect present:
+                                redeem your gift card and treat yourself or someone you love</p>
+                        </div>
+                        <div class="swiper-slide text">Got a gift card ?<p class="slider-sub">The perfect present:
+                                redeem your gift card and treat yourself or someone you love</p>
+                        </div>
+                        <div class="swiper-slide text">Got a gift card ?<p class="slider-sub">The perfect present:
+                                redeem your gift card and treat yourself or someone you love</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="logrht">
+                <div class="gc-title">Redeem Your Gift Card</div>
+                <div class="gc-right-box">	
+                    <div class="gc-form-box">
+                        <form action="javascript:void(0);" id="form">
+                            <div class="gc-number-row">
+                                <div class="width-75">
+                                    <p class="cc-tittle">Enter 16 Digit Gift Card Number</p>
+                                    <input type="password" name="giftCardNumber" maxlength="16" id="giftCardNumber"
+                                        placeholder="****************" class="pay-input" value="">
+                                </div>
+                                <div class="width-25">
+                                    <p class="cc-tittle">Gift Card Pin</p>
+                                    <input type="password" name="giftCardPin" maxlength="4" id="giftCardPin"
+                                        placeholder="****" class="pay-input" value="">
+                                </div>
+                            </div>
+                            <div class="gc-phone-row">
+                                <p class="cc-tittle">Mobile no. with country code</p>
+                                <div class="countrycd">
+                                    <select class="form-select" id="phone" name="phone">
+                                        <option value="">+91</option>
+                                        <option value="93">+93</option>
+                                        <option value="358">+358</option>
+                                        <option value="355">+355</option>
+                                        <option value="213">+213</option>
+                                        <option value="1684">+1684</option>
+                                        <option value="376">+376</option>
+                                        <option value="244">+244</option>
+                                    </select>
+                                    <input id="phone" type="tel" name="phone" />
+                                </div>
+                            </div>
+                            <div class="gc-emai-row">
+
+                                <p class="cc-tittle">Enter Email Address</p>
+                                <input type="email" name="emai" id="giftCardNumber" placeholder="XYZ@abc.com"
+                                    class="pay-input" value="">
+
+                            </div>
+                            <div class="gc-btn-row">
+                                <a href="javascript:;" class="btnlog submit-btn">Submit</a>
+                                <a href="javascript:;" class="btnlog clear-btn">Clear</a>
+                            </div>
+                            <div class="gc-term">For any queries, please write to us at <a
+                                    href="mailto:support@hungama.com">support@hungama.com</a> ,
+                                <br>For more details, refer <a href="javascript:;">Terms & Conditons</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper(".logscslider", {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
